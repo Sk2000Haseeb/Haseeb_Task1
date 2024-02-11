@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+</head>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #007bff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius:calc(0.3rem - 1px);
+}
+.div1 {
+      width: 25%;
+      height: 100vh;
+      background-color: #15F5BA;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    #button {
+      width: 200px;
+      background-color: #00A9FF;
+      border-radius: 30px;
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 10px darkblue;
+      cursor: pointer;
+    }
+    #button:hover{
+      background-color: lightsteelblue;
+      color: black;
+    }
+</style>
+<body>
+  <div style="display: flex;">
+    <div class="div1">
+      <h2>MAA CARE</h2>
+      <h4>MHC Design</h4>
+      <p>DOCTOR</p>
+      <br />
+      <div style="display: flex;flex-direction: column;justify-content: center;">
+       
+        <button id="button" type="button" class="btn btn-primary">Dashboard</button>
+  
+                 <button id="button" type="button" class="btn btn-primary" onclick="openappointmentsdata()">Appointments</button>
+       
+       
+        <button id="button" type="button" class="btn btn-primary" onclick="openappointmentlists()">Patients</button>
+        
+               <button id="button" type="button" class="btn btn-primary" onclick="openPayments()">Payments</button>
+        
+        
+        <h4>ACCOUNT</h4>
+        
+        <button id="button" type="button" class="btn btn-primary">Settings</button>
+   
+       
+        <button id="button" type="button" class="btn btn-primary" style="margin-bottom: 20px;">Help</button>
+        
+       <button id="button" type="button" class="btn btn-primary" onclick="openloginform()">Logout</button>
+        
+      </div>
+    </div>
+
+  <div>
+      <div class="container-fluid">
+         
+        <div style="border: 1px solid black;height: 100vh;">
+          <div style="display: flex;justify-content: flex-end;margin-top: 10px;">
+            <input type="search" placeholder="search" style="border-radius: 20px;width: 180px;"></input>
+          </div>
+          <br/>
+          <div style="display: flex;width: 100%;justify-content: space-around;">
+            <h3>  APPOINTMENTS LISTS</h3>
+            <button id="button"> + Create a Appointment</button>
+          </div>
+          <h4>Search Patient Details</h4>
+        <div >
+          <label>Select Date :</label>
+          <input type="date" placeholder="Select Date"></input>
+       
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: lightslategrey;margin: 10px;">
+            Department
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Department 1</a></li>
+            <li><a class="dropdown-item" href="#">Department 2</a></li>
+            <li><a class="dropdown-item" href="#">Department 3</a></a></li>
+          </ul>
+         
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: lightslategrey;margin: 10px;">
+            Doctor
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Doctor 1</a></li>
+            <li><a class="dropdown-item" href="#">Doctor 2</a></li>
+            <li><a class="dropdown-item" href="#">Doctor 3</a></li>
+          </ul>
+          <button id="button" style="background-color: lightskyblue;width: 100px;">SEARCH</button>
+        </div>
+        <div>       
+         <div style="display: flex;gap: 20px;justify-content: flex-end;padding: 10px;">
+          <button > + Delete Patient</button>
+          <button style="background-color: #00A9FF;">+ Edit Patient</button>
+        </div>
+        <div >
+          <table class="table table-striped"  >
+            <thead>
+              <tr">
+                <th>S.no</th>
+                <th>Appointment ID</th>
+                <th>Patient Info</th>
+                <th>Appointment Status</th>
+                <th>Appointment Time</th>
+                <th>Doctor</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>HH37556622222</td>
+                <td>
+                  K.Ravi Varma<br>
+                  Age: 37 Sex: M
+                </td>
+                <td>Ongoing</td>
+                <td>9.00 AM - 11.00 AM</td>
+                <td>G.K.Sairam</td>
+                <td>
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#doctor-modal" style="margin-bottom: 10px;" onclick="openinvoice()">
+                  Invoice
+                  </button>
+                 
+              
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>HH37556622222</td>
+                <td>
+                  K.Ravi<br>
+                  Age: 47 Sex: M
+                </td>
+                <td>Ongoing</td>
+                <td>9.00 AM - 11.00 AM</td>
+                <td>G.Sai</td>
+                <td>
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#doctor-modal" style="margin-bottom: 10px;" onclick="openinvoice()">
+                    Invoice
+                    </button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+
+</div> 
+<script>
+  function openappointmentlists() {
+    window.location.href = "/appointmentlists.html";
+  }
+  function openappointmentsdata() {
+    window.location.href = "/Appointmentsdata.html";
+  }
+  function openinvoice() {
+    window.location.href = "/invoice.html";
+  }
+  function openloginform() {
+    window.location.href = "/index.html";
+  }
+  function patientregistration() {
+    window.location.href = "/patientregistration.html";
+  }
+
+  function openPayments() {
+    window.location.href = "/Payments.html";
+  }
+  function openRegistrationForm() {
+    window.location.href = "/registrationform.html";
+  }
+  
+  
+  
+</script><script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"
+></script>
+          </body>
+          
+          </html>
+         

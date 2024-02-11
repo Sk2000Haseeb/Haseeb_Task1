@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .div1 {
+      width: 25%;
+      height: 100vh;
+      background-color: #15f5ba;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    #button {
+      width: 200px;
+      background-color: #00a9ff;
+      border-radius: 30px;
+      margin-bottom: 10px;
+      height: 30px;
+      box-shadow: 0px 0px 10px darkblue;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #button:hover {
+      background-color: lightsteelblue;
+      color: black;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .container0 {
+      width: 100%;
+    
+      border-radius: 4px;
+    }
+    .container1 {
+      width: 100%;
+      
+      border-radius: 4px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    #appointmentForm {
+      display: flex;
+    }
+
+    select,
+    input[type="date"],
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0069d9;
+    }
+  </style>
+  <body>
+    <div style="display: flex">
+      <div class="div1">
+        <h2>MAA CARE</h2>
+        <h4>MHC Design</h4>
+        <p>DOCTOR</p>
+        <br />
+        <div style="display: flex;flex-direction: column;justify-content: center;">
+         
+          <button id="button" type="button" class="btn btn-primary">Dashboard</button>
+    
+                   <button id="button" type="button" class="btn btn-primary" onclick="openappointmentsdata()">Appointments</button>
+         
+         
+          <button id="button" type="button" class="btn btn-primary" onclick="openappointmentlists()">Patients</button>
+          
+                 <button id="button" type="button" class="btn btn-primary" onclick="openPayments()">Payments</button>
+          
+          
+          <h4>ACCOUNT</h4>
+          
+          <button id="button" type="button" class="btn btn-primary">Settings</button>
+     
+         
+          <button id="button" type="button" class="btn btn-primary" style="margin-bottom: 20px;">Help</button>
+          
+         <button id="button" type="button" class="btn btn-primary" onclick="openloginform()">Logout</button>
+          
+        </div>
+      </div>
+      <div  style="background-color: white; width: 100%;border: 1px solid black;">
+        <div>
+          <div class="container">
+            <div style="display: flex;justify-content: flex-end;">
+            <form
+              class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control "
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success "
+                type="submit"
+                style="width: 150px;"
+              >
+                Search
+              </button>
+            </form>
+            </div>
+            <h2>PATIENT REGISTRATION</h2>
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic example"
+              style="gap: 20px"
+            >
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Registered
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Not Willing to Register</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">willing to Register</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">New Register</a></li>
+                </ul>
+              </div>
+
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Old Registration
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Not Registered</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container0">
+          <h2 class="text-center mt-5">Patient Appointment Booking</h2>
+          <form id="appointmentForm" style="gap: 40px;padding: 10px;">
+            <div class="form-group" >
+              <label for="name">Name*</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="age">Age*</label>
+              <input type="number" class="form-control" id="age" required />
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input type="date" class="form-control" id="dob" />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender*</label>
+              <select class="form-control" id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="container1">
+          <form id="appointmentForm" style="gap: 40px;padding: 10px;">
+            <div class="form-group" >
+              <label for="number">Mobile*</label>
+              <input type="number" class="form-control" id="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="Email">Email*</label>
+              <input type="text" class="form-control" id="Email" required />
+            </div>
+            <div class="form-group">
+              <label for="Occupation">Occupation</label>
+              <input type="text" class="form-control" id="Occupation" />
+            </div>
+            <div class="form-group">
+              <label for="gender">Martial Status*</label>
+              <select class="form-control" id="martial status" required>
+                <option value="">Select </option>
+                <option value="male">Married</option>
+                <option value="female">UnMarried</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="container1">
+          <form id="appointmentForm" style="gap: 40px;padding: 10px;">
+            <div class="form-group" >
+              <label for="address">Address*</label>
+              <input type="number" class="form-control" id="address" required />
+            </div>
+            <div class="form-group">
+              <label for="Pincode">Pincode*</label>
+              <input type="number" class="form-control" id="Pincode" required />
+            </div>
+          </form>
+        </div>
+        
+        <div class="container1">
+          <form id="appointmentForm" style="gap: 40px;padding: 10px;">
+            <div class="form-group">
+              <label>Department*</label>
+              <select class="form-control" id="department" required>
+                <option value="">Department 1 </option>
+                <option value="male">Department 2</option>
+                <option value="female">Department 3</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Doctor</label>
+              <select class="form-control" id="Doctor" >
+                <option value="">Doctor 1 </option>
+                <option value="male">Doctor 3</option>
+                <option value="female">Doctor 3</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label >Appointment Time</label>
+              <select class="form-control" id="time" required>
+                <option value="">Time 1 </option>
+                <option value="male">Time 2 </option>
+                <option value="female">Time 3 </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label >Appointment Date</label>
+              <input type="date" class="form-control" id="dob" />
+            </div>
+           
+          </form>
+          <div style="width: 100%;display: flex;justify-content: center;">
+            <button style="width: 150px;background-color: lightskyblue;border-radius: 10px;border: none;box-shadow: 0px 0px 10px darkblue;">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function openappointmentlists() {
+        window.location.href = "/appointmentlists.html";
+      }
+      function openappointmentsdata() {
+        window.location.href = "/Appointmentsdata.html";
+      }
+      function openinvoice() {
+        window.location.href = "/invoice.html";
+      }
+      function openloginform() {
+        window.location.href = "/index.html";
+      }
+      function patientregistration() {
+        window.location.href = "/patientregistration.html";
+      }
+  
+      function openPayments() {
+        window.location.href = "/Payments.html";
+      }
+      function openRegistrationForm() {
+        window.location.href = "/registrationform.html";
+      }
+      
+      
+      
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

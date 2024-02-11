@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Form</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .div1 {
+      width: 25%;
+      height: 100vh;
+      background-color: #15F5BA;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    #button {
+      width: 200px;
+      background-color: #00A9FF;
+      border-radius: 30px;
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 10px darkblue;
+      cursor: pointer;
+    }
+    #button:hover{
+      background-color: lightsteelblue;
+      color: black;
+    }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex;">
+      <div class="div1">
+        <h2>MAA CARE</h2>
+        <h4>MHC Design</h4>
+        <p>DOCTOR</p>
+        <br />
+        <div style="display: flex;flex-direction: column;justify-content: center;">
+         
+          <button id="button" type="button" class="btn btn-primary">Dashboard</button>
+    
+                   <button id="button" type="button" class="btn btn-primary" onclick="openappointmentsdata()">Appointments</button>
+         
+         
+          <button id="button" type="button" class="btn btn-primary" onclick="openappointmentlists()">Patients</button>
+          
+                 <button id="button" type="button" class="btn btn-primary" onclick="openPayments()">Payments</button>
+          
+          
+          <h4>ACCOUNT</h4>
+          
+          <button id="button" type="button" class="btn btn-primary">Settings</button>
+     
+         
+          <button id="button" type="button" class="btn btn-primary" style="margin-bottom: 20px;">Help</button>
+          
+         <button id="button" type="button" class="btn btn-primary" onclick="openloginform()">Logout</button>
+          
+        </div>
+      </div>
+      <div>
+        <h2 style="padding: 10px;">Payments</h2>
+       <div class="container" >
+        <div style="border: 1px solid black; height: 70px;display: flex;justify-content: center;">
+          <form class="form-inline">
+            <div class="form-group mr-2">
+              <label for="fromDate" class="sr-only">From Date</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fromDate"
+                placeholder="From Date"
+              />
+            </div>
+            <div class="form-group mr-2">
+              <label for="toDate" class="sr-only">To Date</label>
+              <input
+                type="date"
+                class="form-control"
+                id="toDate"
+                placeholder="To Date"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Search</button>
+            <button type="button" class="btn btn-secondary">Clear</button>
+          </form>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sr.No.</th>
+              <th>Invoice No.</th>
+              <th>Patient Name</th>
+              <th>Department</th>
+              <th>Payment Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>KHgfrdrLIUEhH</td>
+              <td>Vijaya Kumar</td>
+              <td>Cardiology</td>
+              <td>Pending</td>
+              <td>
+                <button class="btn btn-success">MAKE AS PAID</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>LZYnDDLIUEhH</td>
+              <td>T.G.Swamy</td>
+              <td>ENT</td>
+              <td>Paid</td>
+              <td>-----</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>LZYnDDLIUEhH</td>
+              <td>K.B.Ramesh</td>
+              <td>Neurology</td>
+              <td>Pending</td>
+              <td>
+                <button class="btn btn-success">MAKE AS PAID</button>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>HGFJDDLIUEhH</td>
+              <td>Kiran Kumar</td>
+              <td>Orthopedic</td>
+              <td>Pending</td>
+              <td>
+                <button class="btn btn-success">MAKE AS PAID</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    <script>
+      function openappointmentlists() {
+        window.location.href = "/appointmentlists.html";
+      }
+      function openappointmentsdata() {
+        window.location.href = "/Appointmentsdata.html";
+      }
+      function openinvoice() {
+        window.location.href = "/invoice.html";
+      }
+      function openloginform() {
+        window.location.href = "/index.html";
+      }
+      function patientregistration() {
+        window.location.href = "/patientregistration.html";
+      }
+  
+      function openPayments() {
+        window.location.href = "/Payments.html";
+      }
+      function openRegistrationForm() {
+        window.location.href = "/registrationform.html";
+      }
+      
+      
+      
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

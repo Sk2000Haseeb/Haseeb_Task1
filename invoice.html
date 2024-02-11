@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      .inovicediv {
+        width: 700px;
+        height: 900px;
+      }
+      .title {
+        background-color: #15F5BA;
+      }
+      #button:hover{
+        background-color:lightskyblue;
+        cursor: pointer;
+      }
+      .div1 {
+      width: 25%;
+      height: 100vh;
+      background-color: #15F5BA;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    #button {
+      width: 200px;
+      background-color: #00A9FF;
+      border-radius: 30px;
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 10px darkblue;
+      cursor: pointer;
+      height: 30px;
+    }
+    #button:hover{
+      background-color: lightsteelblue;
+      color: black;
+    }
+    </style>
+  </head>
+  <body>
+  <div style="display: flex">
+    <div class="div1">
+      <h2>MAA CARE</h2>
+      <h4>MHC Design</h4>
+      <p>DOCTOR</p>
+      <br />
+      <div style="display: flex;flex-direction: column;justify-content: center;">
+       
+        <button id="button" type="button" class="btn btn-primary">Dashboard</button>
+  
+                 <button id="button" type="button" class="btn btn-primary" onclick="openappointmentsdata()">Appointments</button>
+       
+       
+        <button id="button" type="button" class="btn btn-primary" onclick="openappointmentlists()">Patients</button>
+        
+               <button id="button" type="button" class="btn btn-primary" onclick="openPayments()">Payments</button>
+        
+        
+        <h4>ACCOUNT</h4>
+        
+        <button id="button" type="button" class="btn btn-primary">Settings</button>
+   
+       
+        <button id="button" type="button" class="btn btn-primary" style="margin-bottom: 20px;">Help</button>
+        
+       <button id="button" type="button" class="btn btn-primary" onclick="openloginform()">Logout</button>
+        
+      </div>
+    </div>
+    
+    <div class="inovicediv" style="border: 1px solid black;width: 100%;display: flex;justify-content: center;">
+      <div style="border: solid black;width: 80%;height: 60%;">
+      <div class="title">
+        <h2 style="width: 100%; font-weight: bold; color: white">INVOICE</h2>
+      </div>
+      <div style="width: 100%; display: flex; gap: 20px">
+        <div style="width: 45%">
+          <h4 style="font-weight: bold">Patient Name :</h4>
+          <h5>K.V.Sai Kumar</h5>
+        </div>
+        <div style="width: 45%">
+          <h4 style="font-weight: bold">Appointment Id :</h4>
+          <h5>HH**********</h5>
+        </div>
+      </div>
+      <br />
+      
+<div class="container mt-5">
+	<table class="table table-bordered">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Sr.No.</th>
+				<th scope="col">Invoice No.</th>
+				<th scope="col">Payment Status</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>LZYNDDLIUEhH</td>
+				<td>Pending</td>
+				<td><button type="button" class="btn btn-success">MAKE AS PAID</button></td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td>KHgfrdrLIUEhH</td>
+				<td>Paid</td>
+				<td><button type="button" class="btn btn-secondary">MAKE AS PAID</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <br/>
+      <div style="display: flex;gap: 50px;">     
+         <div style="display: flex;">
+        <p style="font-weight: bold;">
+            Type:
+        </p>
+        <input></input>
+      </div>
+      <div style="display: flex;">
+        <p>COST:</p>
+        <p>
+            <input></input>
+        </p>
+      </div>
+    </div>
+
+    <br/>
+    <div style="display: flex;background-color: #15F5BA;justify-content: space-between;align-items: center;height: 50px;">
+        <p style="font-weight: bold;color: white;">Print</p>
+        <button id="button">Raise Invoice</button>
+    </div>
+  </div>
+    </div>
+  </div>
+  <script>
+    function openappointmentlists() {
+      window.location.href = "/appointmentlists.html";
+    }
+    function openappointmentsdata() {
+      window.location.href = "/Appointmentsdata.html";
+    }
+    function openinvoice() {
+      window.location.href = "/invoice.html";
+    }
+    function openloginform() {
+      window.location.href = "/index.html";
+    }
+    function patientregistration() {
+      window.location.href = "/patientregistration.html";
+    }
+
+    function openPayments() {
+      window.location.href = "/Payments.html";
+    }
+    function openRegistrationForm() {
+      window.location.href = "/registrationform.html";
+    }
+    
+    
+    
+  </script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
